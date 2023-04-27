@@ -3,3 +3,4 @@
 <%else %>
   $("#message").append('<%=j(render 'conversations/received_message',message:@message) %>');
 <%end %>
+$('#my-form').get(0).reset();
