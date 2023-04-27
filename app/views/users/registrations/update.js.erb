@@ -1,0 +1,6 @@
+<%if resource.errors.any? %>
+alert("<%= resource.errors.full_messages.join(',') %>");
+<%else %>
+alert("updates sucessfully");
+window.location = '<%= root_path%>';
+<%end %>

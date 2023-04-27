@@ -1,0 +1,14 @@
+<div class="d-flex flex-row justify-content-start">
+  <%if message.user.profile_image.attached? %>
+    <%=image_tag message.user.profile_image,
+                 alt: "avatar 3", style: "width: 60px; height: 50px;", class: "d-flex align-self-center me-3 rounded-circle" %>
+  <%else %>
+    <img src="https://i0.wp.com/www.gosfordpark-coventry.org.uk/wp-content/uploads/blank-avatar.png?ssl=1"
+         alt="avatar 3" style="width: 40px; height: 100%;">
+  <%end %>
+  <div>
+    <p class="small p-2 ms-3 mb-1 rounded-3" style="background-color: #f5f6f7;"><%=message.body %></p>
+
+    <p class="small ms-3 mb-3 rounded-3 text-muted float-end"><%= message.created_at.strftime("%-I:%M %p | %b %-d") %></p>
+  </div>
+</div>

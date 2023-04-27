@@ -1,0 +1,6 @@
+<%= form_tag('/conversations/', method: :get, class: "input-group rounded mb-3") do %>
+  <%= text_field_tag :search, nil, class: "form-control rounded", placeholder: "Enter the Email ID", aria: {label: "Search", describedby: "search-addon"} %>
+  <button type="submit" class="input-group-text border-0" id="search-addon">
+    <i class="fas fa-search"></i>
+  </button>
+<% end %>

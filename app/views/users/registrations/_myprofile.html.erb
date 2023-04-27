@@ -1,0 +1,56 @@
+<%= form_with(model: resource,url: registration_path(resource),local: false, html: { method: :put }) do |f| %>
+  <%= render "users/shared/error_messages", resource: resource %>
+      <div class="col col-md-9 col-lg-7 col-xl-5">
+        <div class="card" style="border-radius: 15px;">
+          <div class="card-body p-4">
+            <div class="d-flex text-black">
+              <div class="flex-shrink-0">
+                <%if @user.profile_image.attached? %>
+                <%=image_tag @user.profile_image,class: "img-fluid", style: "width: 180px; height: 180px; border-radius: 10px;" %>
+                  <%else %>
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfCZ4norb_mS_kpeSNYNev7UPgwYklhoU5Cw&usqp=CAU"
+                       alt="Generic placeholder image" class="img-fluid"
+                       style="width: 180px; border-radius: 10px;">
+                  <%end %>
+
+              </div>
+              <div class="flex-grow-1 ms-3">
+
+                <div  class="mb-1">
+                  <%= f.label :email,class: "small text-muted mb-1" %><br />
+                  <%= f.email_field :email, autofocus: true, autocomplete: "email",disabled: true %>
+                </div>
+                <div  class="mb-1">
+                  <%= f.label :name ,class:"small text-muted mb-1"%><br />
+                  <%= f.text_field :name, autofocus: true, autocomplete: "name"%>
+                </div>
+                <div class="mb-1">
+                  <%= f.label :current_password, class:"small text-muted mb-1" %><br />
+                  <%= f.password_field :current_password, autocomplete: "current-password" %>
+                </div>
+                <br>
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+</div>
+  <div class="modal-footer">
+    <div class="form-outline">
+
+      <%= f.file_field :profile_image, autofocus: true, autocomplete: "email",id: "form1Example13", class:"form-control ",accept: "image/*" %>
+
+    </div>
+    <div  class="mb-1 small text-muted mb-1">
+      <%= f.submit "Update", class: "btn btn-outline-primary me-1 flex-grow-1" %>
+
+    </div>
+    <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Close</button>
+  </div>
+  </div>
+<% end %>
+
+

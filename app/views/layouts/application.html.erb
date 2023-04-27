@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ChatApplication</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+      />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+      rel="stylesheet"
+      />
+    <!-- MDB -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.css"
+      rel="stylesheet"
+      />
+  <style>
+
+      #chat3 .form-control {
+          border-color: transparent;
+      }
+
+      #chat3 .form-control:focus {
+          border-color: transparent;
+          box-shadow: inset 0px 0px 0px 1px transparent;
+      }
+
+      .badge-dot {
+          border-radius: 30%;
+          height: 10px;
+          width: 10px;
+          margin-left: 2.9rem;
+          margin-top: -.75rem;
+      }
+
+  </style>
+
+  </head>
+
+  <body>
+  <% if notice.present? %>
+    <div class="alert alert-primary" role="alert">
+      <%= notice %>
+    </div>
+    <%end %>
+    <%if alert.present? %>
+    <div class="alert alert-danger" role="alert">
+      <%= alert %>
+    </div>
+
+    <%end %>
+    <%= yield %>
+    <!-- MDB -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.js"
+    ></script>
+
+  </body>
+</html>

@@ -1,0 +1,71 @@
+<%= render "navbar" %>
+<section style="background-color: darkgrey;">
+  <div class="container py-5">
+
+    <div class="row">
+      <div class="col-md-12">
+
+        <div class="card" id="chat3" style="border-radius: 15px;">
+          <div class="card-body">
+
+            <div class="row">
+              <div class="col-md-6 col-lg-5 col-xl-4 mb-4 mb-md-0">
+
+                <div class="p-3">
+
+                  <%=render "search" %>
+
+                  <div style="position: relative; height: 400px; overflow: auto;">
+                    <ul class="list-unstyled mb-0">
+                      <% unless params[:search].present? %>
+                        <% @users.each do |user| %>
+                          <%=render "list_user",user: user %>
+                        <%end %>
+                      <%else %>
+                        <%=render "user",user: @users %>
+                      <%end %>
+                    </ul>
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div class="col-md-6 col-lg-7 col-xl-8">
+                <div class="card">
+                  <div class="card-header d-flex justify-content-between align-items-center p-3"
+                       style="border-top: 4px solid #ffa900;">
+                    <h5 class="mb-0">No Chat</h5>
+
+                  </div>
+                </div>
+                <div style="position: relative; height: 400px; overflow: auto;" class="pt-3 pe-3">
+
+
+                </div>
+
+                <div class="text-muted d-flex justify-content-start align-items-center pe-3 pt-3 mt-2">
+                  <%if @user.profile_image.attached? %>
+                  <%=image_tag @user.profile_image,
+                     alt: "avatar 3", style: "width: 60px; height: 50px;", class: "d-flex align-self-center me-3 rounded-circle" %>
+                    <%else %>
+                  <img src="https://i0.wp.com/www.gosfordpark-coventry.org.uk/wp-content/uploads/blank-avatar.png?ssl=1"
+                       alt="avatar 3" style="width: 40px; height: 100%;">
+                    <%end %>
+                  <input type="text" class="form-control form-control-lg" id="exampleFormControlInput2"
+                         placeholder="Type message">
+
+                  <a class="ms-3" href="#!"><i class="fas fa-paper-plane"></i></a>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
