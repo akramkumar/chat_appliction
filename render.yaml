@@ -1,7 +1,7 @@
 databases:
   - name: chat_db
-    databaseName: chat_db_ud56
-    user: chat_db_ud56_user
+    databaseName: chat_db_vowa
+    user: chat_db_vowa_user
 
 services:
   - type: web
