@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     sessions: 'users/sessions',
     registrations: 'users/registrations'
   }
+  delete "conversations/:conversation_id/messages/:id", to: 'messages#destroy'
   root "conversations#index"
   resources :conversations do
     resources :messages, only: [:create]
