@@ -1,7 +1,7 @@
 databases:
   - name: chat_db
-    databaseName: chat_db_7a44
-    user: chat_db_7a44_user
+    databaseName: chat_db_c4hk
+    user: chat_db_c4hk_user
 
 services:
   - type: web
